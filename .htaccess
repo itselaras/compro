@@ -1,0 +1,14 @@
+Options +FollowSymLinks
+IndexIgnore */*
+# Turn on the RewriteEngine
+RewriteEngine On
+#  Rules
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php [L]
+#multiphp
+<FilesMatch "\.(php4|php5|php3|php2|php|phtml)$">
+ 
+ SetHandler application/x-httpd-alt-php56___lsphp
+ 
+</FilesMatch>
